@@ -3,6 +3,7 @@ import os
 import random
 import time
 from modules.udp_flood import start_udp_flood
+from utils.logger import log_attack
 # from modules.http_flood import start_http_flood  # (آگے بنائیں گے)
 # from utils.ip_spoofer import spoof_ip  # (آگے شامل کریں گے)
 # from utils.logger import log_attack  # (آگے شامل کریں گے)
