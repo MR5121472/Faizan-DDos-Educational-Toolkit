@@ -18,6 +18,6 @@ This project was created by **Muhammad Faizan Naeem** for ethical hacking learni
 ## 🚀 How to Run
 
 ```bash
-git clone https://github.com/faizanmughal/Faizan-DDos-Educational-Toolkit.git
+git clone https://github.com/MR5121472/Faizan-DDos-Educational-Toolkit.git
 cd Faizan-DDos-Educational-Toolkit
 python3 main.py
